@@ -1,0 +1,375 @@
+/* Homepage - Full Viewport Studio Edition */
+
+.homepage { padding-bottom: 0; overflow-x: hidden; }
+
+/* ── Hero fullscreen background (active wrapper) ─────────── */
+.hero-fullscreen-wrapper {
+  position: relative;
+  width: 100vw;
+  min-height: calc(100vh - 70px);
+  margin-left: calc(-50vw + 50%);
+  background-image:
+    linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.95) 100%),
+    url('/images/studio_vu_meter.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 40px 24px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+@media (min-width: 1024px) {
+  .hero-fullscreen-wrapper {
+    padding: 60px 80px;
+    gap: 40px;
+  }
+}
+
+/* ── Main Layout Setup ─────────── */
+.homepage-grid {
+  position: relative;
+  width: 100vw;
+  min-height: calc(100vh - 70px);
+  margin-left: calc(-50vw + 50%);
+  background-image: 
+    linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.95) 100%),
+    url('/images/studio_vu_meter.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 40px 24px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+@media (min-width: 1024px) {
+  .homepage-grid {
+    padding: 60px 80px;
+    gap: 40px;
+  }
+}
+
+/* ── Top Row: Header & Ads ──────── */
+.grid-header {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+@media (min-width: 1024px) {
+  .grid-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  font-size: 11px;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  color: var(--accent-from);
+  margin-bottom: 16px; /* Reduced from 32px */
+  background: rgba(212, 175, 55, 0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);
+}
+
+.hero-title {
+  font-size: clamp(42px, 7vw, 76px);
+  font-weight: 300; /* Thin, elegant weight */
+  line-height: 1.05;
+  margin-bottom: 16px; /* Reduced from 24px */
+  color: #ffffff;
+  max-width: 900px;
+  letter-spacing: -0.04em;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+.hero-title .accent-text {
+  font-weight: 700;
+  font-style: normal;
+  /* Remove the parent's dark text-shadow which overlaps and darkens transparent text in WebKit */
+  text-shadow: none;
+  /* Use a horizontal gradient so the text hits the bright stops perfectly */
+  background-image: linear-gradient(90deg, var(--accent-from), var(--accent-to));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline-block;
+  /* Optional: soft glow instead of black shadow to make it pop */
+  filter: drop-shadow(0 0 12px rgba(212, 195, 55, 0.4));
+}
+
+.hero-subtitle {
+  font-size: clamp(12px, 1.5vw, 18px);
+  color: #cccccc;
+  max-width: 700px;
+  line-height: 1.5; /* Slightly tighter */
+  font-weight: 300;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.8);
+  margin-bottom: 10px;
+}
+
+.header-ads {
+  flex: 1;
+  max-width: 600px;
+  min-height: 90px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.hero-features {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.hero-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-family: var(--font-mono);
+}
+
+.hero-feature-item svg {
+  color: var(--text-primary);
+}
+
+/* ── Main Row: Dashboard Grid ──────── */
+.grid-main-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .grid-main-row {
+    grid-template-columns: 1.2fr 1fr 0.8fr; /* DragDrop | Formats | Premium */
+    grid-auto-rows: minmax(min-content, max-content);
+  }
+}
+
+/* Common Card Styling for all panels */
+.dashboard-panel {
+  background: rgba(15, 15, 15, 0.8);
+  backdrop-filter: blur(24px) saturate(1.2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Panel 1: Upload (Drag & Drop) */
+
+.panel-upload .drop-zone {
+  flex-grow: 1; /* Make it fill available space vertically */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 300px;
+}
+
+/* Panel 2: Config (Formats & Convert) */
+.panel-config {
+  justify-content: space-between;
+}
+.panel-config-top {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Panel 3: Premium */
+.panel-premium {
+  background: rgba(25, 20, 10, 0.9);
+  border-color: rgba(212, 175, 55, 0.2);
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 24px;
+}
+.panel-premium-icon {
+  color: var(--accent-from);
+  padding: 16px;
+  background: rgba(212, 175, 55, 0.1);
+  border-radius: 50%;
+}
+.panel-premium h3 {
+  font-size: 24px;
+  font-weight: 300;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.panel-premium p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.step-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+}
+
+.step-number {
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.limit-hint { 
+  font-size: 12px; 
+  color: var(--text-muted); 
+  font-family: var(--font-mono);
+  margin-top: 8px;
+}
+.link-btn { 
+  color: var(--accent-from); 
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  padding-bottom: 1px;
+}
+.link-btn:hover { 
+  color: var(--accent-to); 
+  border-color: var(--accent-to);
+}
+
+/* Result box */
+.result-box { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 20px; 
+  border: 1px solid var(--border);
+  padding: 32px;
+  background: var(--bg-surface);
+}
+
+.result-success {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.result-icon { color: var(--success); }
+
+.result-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+.result-actions .btn { flex: 1; min-width: 200px; }
+
+/* Limit exceeded */
+.limit-exceeded-box { display: flex; flex-direction: column; gap: 16px; }
+
+/* Right column components (Premium / SEO) */
+
+/* ── SEO grid: 3 columns full-width ─────────────────────── */
+.seo-links {
+  width: 100%;
+}
+
+.seo-links-title {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.seo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .seo-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Premium banner centered ─────────────────────────────── */
+.premium-banner {
+  text-align: center;
+  align-items: center;
+}
+.premium-banner-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.premium-banner-icon {
+  color: var(--accent-from);
+}
+.premium-banner p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  max-width: 480px;
+}
+
+.seo-card {
+  border: 1px solid var(--border);
+  padding: 24px;
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.seo-card:hover { 
+  border-color: var(--accent-from); 
+  background: rgba(212, 175, 55, 0.02); 
+}
+
+.seo-card strong { 
+  font-size: 15px; 
+  font-weight: 500;
+  color: #fff;
+}
+.seo-card p { font-size: 13px; color: var(--text-secondary); flex: 1; line-height: 1.5; }
+.seo-card-arrow { 
+  font-size: 11px; 
+  font-family: var(--font-mono);
+  color: var(--accent-from); 
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  opacity: 0.8;
+}

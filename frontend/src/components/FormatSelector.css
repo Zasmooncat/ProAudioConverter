@@ -1,0 +1,65 @@
+/* Format Selector - Minimalist Edition */
+
+.format-selector {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.form-group {
+  margin-bottom: 8px;
+}
+
+.quality-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.quality-pill {
+  padding: 10px 16px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-family: var(--font-mono);
+  transition: all var(--transition);
+  text-align: center;
+  min-width: 90px;
+}
+
+.quality-pill:hover:not(:disabled) {
+  border-color: var(--border-focus);
+  color: var(--text-primary);
+}
+
+.quality-pill.active {
+  background: var(--accent-from);
+  color: #000000;
+  border-color: var(--accent-from);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
+.quality-pill:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.format-info {
+  font-size: 13px;
+  color: var(--text-secondary);
+  padding: 12px 0;
+  border-top: 1px solid var(--border);
+  margin-top: 8px;
+}
+
+@media (min-width: 640px) {
+  .format-selector {
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
+  }
+  .format-info {
+    grid-column: 1 / -1; /* spans full width */
+  }
+}

@@ -1,0 +1,41 @@
+.ads-banner-outer {
+  width: 100%;
+  background: var(--bg-surface);
+  border: 1px dashed rgba(255,255,255,0.08);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ads-banner-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.ads-banner-ins { min-height: 60px; width: 100%; }
+
+/* Shown when AdSense hasn't loaded (dev / no script) */
+.ads-banner-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 60px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+.ads-banner-fallback a {
+  color: var(--accent-from);
+  font-weight: 500;
+}
+.ads-banner-fallback a:hover { text-decoration: underline; }
+
+/* Hide fallback when AdSense fills the slot (it places inside .adsbygoogle) */
+.adsbygoogle:not(:empty) + .ads-banner-fallback { display: none; }

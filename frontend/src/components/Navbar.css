@@ -1,0 +1,93 @@
+/* Navbar - Minimalist Edition */
+
+.navbar {
+  /* No sticky, standard relative flow looks cleaner for minimal sites */
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-base);
+}
+
+.navbar-inner {
+  
+  margin: 0 auto;
+  padding: 0 32px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  flex-shrink: 0;
+  letter-spacing: -0.02em;
+}
+
+.navbar-logo-icon { 
+  color: var(--text-primary); 
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex: 1;
+}
+.navbar-links a {
+  font-size: 13px;
+  color: var(--text-secondary);
+  transition: color var(--transition);
+}
+.navbar-links a:hover { color: var(--text-primary); }
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+}
+
+.navbar-email {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+}
+
+.navbar-menu-btn {
+  display: none;
+  color: var(--text-primary);
+  margin-left: auto;
+}
+
+@media (max-width: 768px) {
+  .navbar-inner { gap: 20px; padding: 0 24px; }
+  .navbar-menu-btn { display: flex; }
+  .navbar-links {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0; right: 0;
+    background: var(--bg-base);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+    gap: 0;
+    z-index: 100;
+  }
+  .navbar-links.open { display: flex; }
+  .navbar-links a { 
+    font-size: 14px; 
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .navbar-actions { gap: 12px; }
+  .navbar-email { display: none; }
+}

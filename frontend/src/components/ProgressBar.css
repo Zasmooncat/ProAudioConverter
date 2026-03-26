@@ -1,0 +1,50 @@
+/* ProgressBar - Minimalist Edition */
+
+.progressbar-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 0;
+}
+
+.progressbar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.progressbar-pct {
+  color: var(--text-primary);
+}
+
+.progressbar-track {
+  height: 2px;
+  background: var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.progressbar-fill {
+  height: 100%;
+  background: #fff;
+  transition: width 0.3s ease;
+  position: absolute;
+  top: 0; left: 0;
+}
+
+.progressbar-fill.done {
+  background: var(--success);
+}
+
+.progressbar-fill.error {
+  background: var(--error);
+}
+
+.progressbar-error {
+  font-size: 13px;
+  color: var(--error);
+  margin-top: 8px;
+}

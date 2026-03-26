@@ -1,0 +1,38 @@
+# Entornos Virtuales y Dependencias
+.venv/
+node_modules/
+
+# Variables de Entorno y Claves Secretas
+.env
+.env.local
+
+# Archivos Generados o Temporales
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Base de Datos (Si usas SQLite local no la subas a GitHub)
+/*.db
+*.sqlite3
+*.sqlite
+
+# Carpetas de Archivos Subidos/Convertidos (Para no subir el audio de tus pruebas)
+uploads/
+converted/
+results/
+backend/uploads/
+backend/converted/
+backend/results/
+backend/audioconverter.db
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Entorno local de desarrollo Frontend
+dist/
+dist-ssr/
+coverage/

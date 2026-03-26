@@ -1,0 +1,68 @@
+/* Shared styles for SEO pages */
+
+.seo-page { padding-bottom: 80px; }
+
+.seo-header {
+  padding: 56px 0 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 48px;
+}
+
+.seo-breadcrumb { font-size: 13px; color: var(--text-muted); }
+.seo-breadcrumb a { color: var(--accent-from); }
+.seo-breadcrumb a:hover { text-decoration: underline; }
+
+.seo-section {
+  margin-bottom: 48px;
+}
+
+.seo-section h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.seo-section p {
+  color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.seo-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.seo-info-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.seo-info-card strong { font-size: 15px; }
+.seo-info-card p { font-size: 14px; color: var(--text-secondary); }
+
+.faq-list { display: flex; flex-direction: column; }
+
+.seo-cta {
+  background: var(--accent-grad-subtle);
+  border: 1px solid var(--border-glow);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 48px;
+}
+.seo-cta h2 { font-size: 28px; }
+.seo-cta p { color: var(--text-secondary); margin-bottom: 8px; }
