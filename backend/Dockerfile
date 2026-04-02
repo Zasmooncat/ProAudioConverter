@@ -5,9 +5,9 @@ FROM python:3.11-slim
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-# Instalar FFmpeg (imprescindible para procesar audio)
+# Instalar FFmpeg y dependencias de PostgreSQL (imprescindibles)
 RUN apt-get update && \
-    apt-get install -y ffmpeg && \
+    apt-get install -y ffmpeg libpq-dev gcc && \
     rm -rf /var/lib/apt/lists/*
 
 # Crear y moverse a la carpeta de la app en el contenedor
