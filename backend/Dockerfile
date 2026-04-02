@@ -26,4 +26,4 @@ COPY . .
 EXPOSE 10000
 
 # Comando para iniciar la aplicación en producción con gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:10000", "app:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:10000", "--timeout", "120", "app:app"]
