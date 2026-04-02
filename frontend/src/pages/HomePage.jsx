@@ -25,7 +25,7 @@ export default function HomePage() {
     const [showAuth, setShowAuth] = useState(false);
     const [limitExceeded, setLimitExceeded] = useState(false);
 
-    const maxSize = isPremium ? 500 * 1024 * 1024 : 50 * 1024 * 1024;
+    const maxSize = isPremium ? 500 * 1024 * 1024 : 60 * 1024 * 1024;
 
     // Reset conversion state when file changes
     useEffect(() => {
@@ -147,7 +147,7 @@ export default function HomePage() {
                                 />
                                 {!isPremium && (
                                     <p className="limit-hint">
-                                        Free plan: up to 50 MB · 3 conversions/hour ·
+                                        Free plan: up to 60 MB · 3 conversions/hour ·
                                         <button className="link-btn" onClick={handleUpgrade}> Upgrade for more</button>
                                     </p>
                                 )}

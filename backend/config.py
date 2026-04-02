@@ -30,7 +30,7 @@ class Config:
     CONVERTED_FOLDER = os.environ.get("CONVERTED_FOLDER", os.path.join(BASE_DIR, "..", "converted"))
 
     # Size limits (bytes)
-    FREE_MAX_SIZE = 50 * 1024 * 1024       # 50 MB
+    FREE_MAX_SIZE = 60 * 1024 * 1024       # 60 MB
     PREMIUM_MAX_SIZE = 500 * 1024 * 1024   # 500 MB
     MAX_CONTENT_LENGTH = PREMIUM_MAX_SIZE
 

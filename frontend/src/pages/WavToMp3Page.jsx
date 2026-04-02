@@ -6,7 +6,7 @@ import './SeoPage.css';
 const faqs = [
     {
         q: 'Is it free to convert WAV to MP3?',
-        a: 'Yes! Free users get 3 conversions per hour with files up to 50 MB. Upgrade to Premium for unlimited conversions and up to 500 MB file size.',
+        a: 'Yes! Free users get 3 conversions per hour with files up to 60 MB. Upgrade to Premium for unlimited conversions and up to 500 MB file size.',
     },
     {
         q: 'Will I lose audio quality converting WAV to MP3?',
@@ -22,7 +22,7 @@ const faqs = [
     },
     {
         q: 'What is the maximum WAV file size?',
-        a: 'Free users can convert files up to 50 MB. Premium users can upload files up to 500 MB.',
+        a: 'Free users can convert files up to 60 MB. Premium users can upload files up to 500 MB.',
     },
 ];
 

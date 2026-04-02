@@ -22,7 +22,7 @@ const faqs = [
     },
     {
         q: 'Is it free?',
-        a: 'Yes. Free users get 3 conversions per hour for files up to 50 MB. Premium gives you unlimited conversions and files up to 500 MB.',
+        a: 'Yes. Free users get 3 conversions per hour for files up to 60 MB. Premium gives you unlimited conversions and files up to 500 MB.',
     },
 ];
 
