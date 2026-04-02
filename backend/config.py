@@ -14,6 +14,10 @@ class Config:
         "sqlite:///" + os.path.join(os.path.dirname(os.path.abspath(__file__)), "audioconverter.db")
     )
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SQLALCHEMY_ENGINE_OPTIONS = {
+        "pool_pre_ping": True,
+        "pool_recycle": 300,
+    }
 
     # JWT
     JWT_SECRET_KEY = os.environ.get("JWT_SECRET_KEY", "jwt-secret-change-me")
