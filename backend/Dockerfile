@@ -14,6 +14,8 @@ RUN apt-get update && \
 WORKDIR /app
 
 # Copiar el archivo de dependencias primero para optimizar el caché de Docker
+# Forzar a Render a recompilar las dependencias
+ENV CACHE_BUSTER=2026-04-02-1
 COPY requirements.txt .
 
 # Instalar las librerías de Python (incluyendo gunicorn)
