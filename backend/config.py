@@ -26,8 +26,8 @@ class Config:
 
     # File storage
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    UPLOAD_FOLDER = os.environ.get("UPLOAD_FOLDER", os.path.join(BASE_DIR, "..", "uploads"))
-    CONVERTED_FOLDER = os.environ.get("CONVERTED_FOLDER", os.path.join(BASE_DIR, "..", "converted"))
+    UPLOAD_FOLDER = os.environ.get("UPLOAD_FOLDER", os.path.join("/tmp", "uploads"))
+    CONVERTED_FOLDER = os.environ.get("CONVERTED_FOLDER", os.path.join("/tmp", "converted"))
 
     # Size limits (bytes)
     FREE_MAX_SIZE = 60 * 1024 * 1024       # 60 MB
