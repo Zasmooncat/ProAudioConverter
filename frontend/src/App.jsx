@@ -5,8 +5,15 @@ import HomePage from './pages/HomePage';
 import WavToMp3Page from './pages/WavToMp3Page';
 import FlacToWavPage from './pages/FlacToWavPage';
 import Mp3ToWavPage from './pages/Mp3ToWavPage';
+import { useEffect } from 'react';
+import { pingServer } from './services/api';
 
 export default function App() {
+  useEffect(() => {
+    // Ping to wake up the backend from sleep mode immediately on page load
+    pingServer();
+  }, []);
+
   return (
     <AuthProvider>
       <BrowserRouter>

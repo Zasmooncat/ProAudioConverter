@@ -29,6 +29,9 @@ export const convertAudio = (formData, onUploadProgress) =>
     onUploadProgress,
   });
 
+export const pingServer = () => 
+  api.get('/api/health').catch(() => {});
+
 export const getDownloadUrl = (filename) =>
   `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/download/${filename}`;
 
